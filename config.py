@@ -39,7 +39,7 @@ PUSHOVER_HIGHPRIORITY = True
 # If any issues are encountered, please raise an issue on Github
 SMS_PLAN_ID = ""
 SMS_TOKEN = ""
-SMS_SOURCE = "New World"     # Must be a valid MSISDN, short code or alphanumeric originator (see https://www.sinch.com/docs/sms/http-rest.html#request)
+SMS_SOURCE = "New World"     # Source phone number, including country code (eg. +15551231234) or alphanumeric string
 SMS_TARGET = ""     # Destination phone number, including country code (eg. +15555551234 or +61411000000)
 
 # Plugin: NotifyByDiscord

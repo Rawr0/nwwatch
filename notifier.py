@@ -125,5 +125,5 @@ class NotifyBySMS(Notifier):
             'Authorization': 'Bearer {}'.format(cfg.SMS_TOKEN)
         }
 
-        res = requests.post('https://api.clxcommunications.com/xms/v1/{}/batches'.format(cfg.SMS_PLAN_ID), data=json.dumps(postdata), headers=headers)
+        res = requests.post('https://us.sms.api.sinch.com/xms/v1/{}/batches'.format(cfg.SMS_PLAN_ID), data=json.dumps(postdata), headers=headers)
         if(self.debug): self.log(res.text)
