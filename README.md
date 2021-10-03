@@ -11,7 +11,7 @@
 
 5. start New World
 
-6. run the script using `python3 .\nwwatch.py`. Events enabled within config.py will automatically trigger when the queue threshold (defined in config.py) is met
+6. run the script using `python .\nwwatch.py`. Events enabled within config.py will automatically trigger when the queue threshold (defined in config.py) is met
 
 Once you've done initial setup, you can jump straight to Step 5 going forward.
 
