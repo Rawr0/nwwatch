@@ -7,6 +7,8 @@ LOGFILE = os.environ['LOCALAPPDATA'] + "\\AGS\\New World\\Game.log"
 # 1. Uncomment the names of the plugins you wish to use
 # 2. Configure the relevant variables below
 
+# Need help? Check out the wiki for a sample config file - https://github.com/Rawr0/nwwatch/wiki
+
 ###############################
 ##      PLUGIN SETTINGS      ##
 ###############################
