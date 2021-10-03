@@ -93,6 +93,9 @@ class NotifyByPushover(Notifier):
 class NotifyByDiscord(Notifier):
     def getMessage(self):
         message = "It\'s game time"
+        #If the user id is not an empty string, append it to the end of the message
+        if cfg.DISCORD_USER_ID != "":
+            message += f" <@{cfg.DISCORD_USER_ID}>"
         return message
 
     def notify(self):
@@ -101,7 +104,7 @@ class NotifyByDiscord(Notifier):
             'content':self.getMessage(),
             'tts': cfg.DISCORD_TTS
         }
-        requests.post(cfg.DISCORD_WEBHOOKURL, postdata)            
+        requests.post(cfg.DISCORD_WEBHOOKURL, postdata)
 
 class NotifyBySMS(Notifier):
     debug = False
