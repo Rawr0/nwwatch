@@ -1,7 +1,14 @@
 #!/usr/bin/env python
 import os
 
-LOGFILE = os.environ['LOCALAPPDATA'] + "\\AGS\\New World\\Game.log"
+if not os.path.isfile("/proc/sys/fs/binfmt_misc/WSLInterop"):
+	# windows
+	LOGFILE = os.environ['LOCALAPPDATA'] + "\\AGS\\New World\\Game.log"
+
+else:
+	# wsl
+	LOGFILE = os.popen('cmd.exe /c "echo %LocalAppData%"').read().strip() + "\\AGS\\New World\\Game.log"
+	LOGFILE = os.popen("wslpath '{}'".format(LOGFILE)).read().strip()
 
 # INSTRUCTIONS
 # 1. Uncomment the names of the plugins you wish to use
