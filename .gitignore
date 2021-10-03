@@ -1,0 +1,14 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+# Project files
+config.py.test
+config.py.clean
+.vscode/
+build/
+dist/
+*.ignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
