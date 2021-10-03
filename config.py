@@ -46,7 +46,7 @@ SMS_TARGET = ""     # Destination phone number, including country code (eg. +155
 # In a Discord server you own/manage, navigate to Server Settings -> Integrations -> Webooks -> New Webhook. Click "Copy Webhook URL" and paste it below
 DISCORD_WEBHOOKURL = "https://discord.com/api/webhooks/xxxxxxxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 DISCORD_TTS = False     # Use Discord "Text to speech" to speak the announcement
-
+DISCORD_USER_ID = ""    # (OPTIONAL) Mentions the user in the notification. With developer mode enabled, right click a user and click "Copy Id" to get Id
 
 ###############################
 ## INTERNAL VARIABLES ##
