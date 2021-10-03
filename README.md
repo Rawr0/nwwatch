@@ -5,13 +5,13 @@
 
 2. navigate to the directory where you unzipped / cloned this script to 
 
-3. open a command prompt in that directory, install requirements using `pip3 install -r requirements.txt`
+3. open a command prompt in that directory, install requirements using `pip3 install -r requirements.txt` (if this doesn't work, try `python3 -m pip install -r requirements.txt`)
 
 4. edit `config.py` to enable/disable the notification plugins you want (see PLUGIN SETTINGS and PLUGIN SPECIFIC VARIABLES sections)
 
 5. start New World
 
-6. run the script using `python .\nwwatch.py`. Events enabled within config.py will automatically trigger when the queue threshold (defined in config.py) is met
+6. run the script using `python .\nwwatch.py` (on some systems you may need to use `python3`). Events enabled within config.py will automatically trigger when the queue threshold (defined in config.py) is met
 
 Once you've done initial setup, you can jump straight to Step 5 going forward.
 
