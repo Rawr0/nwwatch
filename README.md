@@ -54,6 +54,12 @@ Log Monitoring
 
 ![nwwatch](https://user-images.githubusercontent.com/18738504/135712635-e31d3d9f-2432-4cb0-9c04-3d9dae85e320.png)
 
-Example Notification
+Example Notification (Discord)
 
 ![nwwatch-discord](https://user-images.githubusercontent.com/18738504/135712639-3ca713eb-f334-4961-896d-47dabbdae6f6.png)
+
+Example Notification (SMS, Pushover)
+
+![nwwatch-sms-pushover](https://user-images.githubusercontent.com/18738504/135735692-482f4b75-214c-409d-9c81-07cd625702e6.jpg)
+
+
