@@ -66,7 +66,7 @@ if __name__ == "__main__":
     if(cfg.TEST_MODE):
         ConsoleLogger.log("TEST MODE ENABLED - TESTING NOTIFICATIONS")
         Notifier().triggerNotificationThreaded()
-        ConsoleLogger.log("Notifications sent. Quitting")
+        ConsoleLogger.log("Notifications sent. Quitting. If notifications are working well, update your config.py to set TEST_MODE to False")
         sys.exit()
 
     while waitingInQueue:
