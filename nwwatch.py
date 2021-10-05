@@ -60,7 +60,17 @@ if __name__ == "__main__":
     print("[Watching] " + cfg.LOGFILE)
     waitingInQueue = True
     queueStartTime = None
-    queuePosition = None
+    queuePosition = "0"
+    currentTime = None
+    jumpedQueue = "0"
+    elapsedTime = None
+    jumpindex = 0
+    totaljumped = 0
+    avgJumped = 0
+    remainingJumps = 0
+    totalTimeElapsed = None
+    timeleft = 0
+    startingPosition = 0
 
     # If test mode
     if(cfg.TEST_MODE):
@@ -85,10 +95,39 @@ if __name__ == "__main__":
                     # Start timing
                     if(queueStartTime is None):
                         queueStartTime = datetime.datetime.now()
+                        # Save for first jump
+                        prevTime = queueStartTime
 
+                    currentTime = datetime.datetime.now()
+                    totalTimeElapsed = currentTime - queueStartTime
+                    
                     # Extract position
+                    jumpedQueue = 0
+                    elapsedTime = 0
+                    prevQueuePosition = queuePosition
                     queuePosition = searchResult[cfg.NW_SEARCH_REGEX_INDEX]
-                    ConsoleLogger.log("Position in queue: " + queuePosition)
+                    if (startingPosition == 0):
+                        startingPosition = int(queuePosition)
+
+                    if (int(prevQueuePosition) - int(queuePosition) > 0):
+                        elapsedTime = currentTime - prevTime
+                        # calculate queue positions down + time gone by
+                        jumpedQueue = int(prevQueuePosition) - int(queuePosition)
+                        # Counter of jumps done
+                        jumpindex = jumpindex + 1
+                        # Calculate remaining jumps
+                        totaljumped = totaljumped + jumpedQueue
+                        avgJumped = totaljumped / jumpindex
+                        remainingJumps = int(queuePosition) / int(avgJumped)
+                        # calulate avg time between jumps
+                        avgJumpTime = (totalTimeElapsed.total_seconds()) / jumpindex
+                        # calculate approximate time left
+                        # convert avgJumpTime to minutes and then to int
+                        timeleft = (int(avgJumpTime) * int(remainingJumps)) // 60
+                        # Save time for next jump
+                        prevTime = currentTime
+                        # output only if jumped position
+                        ConsoleLogger.log("Position in queue: " + queuePosition + " | Time left: ~ " + str(timeleft) + " min")
 
                     if(int(queuePosition) <= cfg.NW_ALERT_AT_QUEUE_POSITION):
                         Notifier().triggerNotificationThreaded()
